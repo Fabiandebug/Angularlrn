@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { BooksModule } from './books/books.module';
 import { PostsComponent } from './posts/posts.component';
+import { PostItemComponent } from './post-item/post-item.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { PostsComponent } from './posts/posts.component';
     AppComponent,
     AboutComponent,
     PostsComponent,
+    PostItemComponent,
 
   ],
   imports: [

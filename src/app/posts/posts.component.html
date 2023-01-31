@@ -1,5 +1,5 @@
 <h1>{{ title }}</h1>
-<ng-container *ngIf="posts.length > 0">
+<!-- <ng-container *ngIf="posts.length > 0">
 
     <ul *ngFor="let post of posts">
       <li [ngStyle]="{'color':'blue'}">{{post.title}}</li>
@@ -10,4 +10,5 @@
   <ng-template [ngIf]="posts.length == 0">
   
     <p>No posts found.</p>
-  </ng-template>
+  </ng-template> -->
+<app-post-item *ngFor="let post of posts"[post]="post"></app-post-item>
