@@ -45,6 +45,10 @@ export class PostsComponent implements OnInit {
         votes: 7
       }
     ];
-  }
 
+
+  }
+  hidePost(post: Posts): void {
+    this.posts = this.posts.filter(p => p.id !== post.id)
+  }
 }
