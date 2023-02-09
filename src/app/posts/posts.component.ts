@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Posts } from '../../models/post'
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-posts',
@@ -11,42 +12,13 @@ export class PostsComponent implements OnInit {
   title: string = "Fuck you bana, Umbwa wewe!!!";
   posts: Posts[] = [];
 
-
-  constructor() { }
+  // Dependancie injection for post data on the constructor
+  constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+    // Dependancie injection for post data
 
-    this.posts = [
-      {
-        id: 1,
-        title: "My fist title",
-        body: "JUst testing out",
-        votes: 5
-      }, {
-        id: 2,
-        title: "My second title",
-        body: "JUst testing out",
-        votes: 15
-      }, {
-        id: 3,
-        title: "My third ost title",
-        body: "JUst testing post out",
-        votes: 1
-      }, {
-        id: 4,
-        title: "My fifth title post",
-        body: "JUst testing out",
-        votes: 3
-      },
-      {
-        id: 5,
-        title: "My 6th post title",
-        body: "Just testing out the post",
-        votes: 7
-      }
-    ];
-
-
+    this.posts = this.postsService.getpost()
   }
   hidePost(post: Posts): void {
     this.posts = this.posts.filter(p => p.id !== post.id)
