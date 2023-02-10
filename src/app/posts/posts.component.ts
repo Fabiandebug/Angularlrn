@@ -9,7 +9,7 @@ import { PostsService } from '../services/posts.service';
 })
 export class PostsComponent implements OnInit {
 
-  title: string = "Fuck you bana, Umbwa wewe!!!";
+  title: string = "Angular Tutorial";
   posts: Posts[] = [];
 
   // Dependancie injection for post data on the constructor
@@ -17,8 +17,15 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     // Dependancie injection for post data
+    this.postsService.getpost().subscribe(res => {
+      for (let index = 0; index < res.length; index++) {
 
-    this.posts = this.postsService.getpost()
+        const post = res[index];
+        post["votes"] = 1;
+      }
+      this.posts = res;
+    })
+
   }
   hidePost(post: Posts): void {
     this.posts = this.posts.filter(p => p.id !== post.id)
