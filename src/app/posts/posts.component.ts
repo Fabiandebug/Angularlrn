@@ -30,4 +30,10 @@ export class PostsComponent implements OnInit {
   hidePost(post: Posts): void {
     this.posts = this.posts.filter(p => p.id !== post.id)
   }
+
+  addPost(post: Posts): void {
+    this.posts.unshift(post);
+    alert(`${post.title} has been added`)
+
+  }
 }

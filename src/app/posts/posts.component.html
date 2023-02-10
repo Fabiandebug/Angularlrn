@@ -13,3 +13,5 @@
     <p>No posts found.</p>
   </ng-template> -->
 <app-post-item *ngFor="let post of posts"[post]="post"(hidePost)="hidePost($event)"></app-post-item>
+
+<app-createpost (addPost)="addPost($event)"></app-createpost>

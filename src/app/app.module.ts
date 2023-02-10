@@ -11,6 +11,8 @@ import { HistoryComponent } from './history/history.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { CreatepostComponent } from './createpost/createpost.component';
 
 
 
@@ -22,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http'
     PostItemComponent,
     HistoryComponent,
     NavBarComponent,
+    CreatepostComponent,
 
   ],
   imports: [
@@ -30,6 +33,7 @@ import { HttpClientModule } from '@angular/common/http'
     BooksModule,
     NgbModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
